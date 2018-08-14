@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        (function(){
+            "use strict";
+
+            var stuff = new Array(2); //a
+           // var stuff = [];          //b
+
+            stuff[0] = 99;
+            stuff[1] = "Pinto";
+            stuff[2] = "Spanky";
+
+            stuff[555] = "1212";
+
+            stuff.push("soysauce"); //556
+            
+            alert(stuff.length); //556
+            
+            stuff.length = 3; // DO NOT DO THIS. But you can. but don't
+
+
+            var nonexistentItem = stuff[555]; //undefined
+            
+
+            function awesomeness(name){
+                return name.length;
+            }
+
+            function nameFilter(name){
+                return name.length < 10;
+            }
+
+            var names = ["Fonda", "Christopher", "Deb", "Eliu"] ; //length :4; highest index:3
+            names.sort() ; //works as expected
+
+            var awesomenessLevel = names
+                .filter(nameFilter)
+                .map(awesomeness); //awesomenessLevel: [5, 3, 4];
+
+
+
+
+
+            var numbers = [5, 10, 8, 100];
+            numbers.sort();
+
+
+
+            var listOfNames = names.join(", ");
+
+
+            var mathFunctions = [];
+            mathFunctions[0] = function(n1,n2) { return n1 + n2};
+            mathFunctions[1] = function(n1,n2) { return n1 - n2};
+            mathFunctions[2] = function(n1,n2) { return n1 * n2};
+            mathFunctions[3] = function(n1,n2) { return n1 / n2};
+
+            var answer = mathFunctions[0](3,4);
+        })();
+        
+    </script>
+</body>
+
+</html>

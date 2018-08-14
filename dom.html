@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        Name:
+        <input type="text" id="name-text" text="sample" value="sample" />
+    </div>
+    <div>
+        City:
+        <input type="text" id="city-text" name="city" />
+    </div>
+    <button class="execute">Add Person</button>
+
+
+    <ul id="people-list">
+
+    </ul>
+
+    <a id='clear-link' href="#" >Clear List</a>
+
+    <script>
+
+        (function () {
+            "use strict";
+
+            var nameText = document.getElementById("name-text");
+            var cityText = document.getElementsByName("city")[0];
+            var button = document.querySelector("button.execute"); //querySelectorAll()
+            var list = document.getElementById("people-list");
+            var clearLink = document.getElementById("clear-link");
+
+
+            // function addPerson(){
+            //     var name = nameText.value;
+            //     var city = cityText.value;
+
+            //     if(name && city){
+            //         let message =  name + " - " + city ;
+            //         let listItem = document.createElement("li"); // <li />
+
+            //         //listItem.innerHTML = message; //fine
+            //         //listItem.innerText = message; //IE only ish
+            //         listItem.textContent = message;
+            //         list.appendChild(listItem);
+            //         nameText.value = "";
+            //         cityText.value = "";
+
+            //     }
+            // }
+
+            function addPerson(evt) {
+                var name = nameText.value;
+                var city = cityText.value;
+
+                if (name && city) {
+                    let message = name + " - " + city;
+                    let listItem = "<li>" + message + "</li>";
+                    list.innerHTML += listItem;
+
+                    nameText.value = "";
+                    cityText.value = "";
+
+                }
+            }
+
+            function clear(evt){
+                evt.preventDefault();
+                list.innerHTML = "";
+
+            }
+
+            //Both function will run in the order added
+            button.addEventListener("click", addPerson);
+            //clearLink.addEventListener("click", clear);
+            //button.addEventListener("click", someOtherFunction);
+            
+            
+            //Only the Second function will run
+            //button.onclick = addPerson;
+            //button.onclick = someOtherFunction;
+
+
+        })();
+
+
+    </script>
+</body>
+
+</html>

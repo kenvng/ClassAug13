@@ -1,1 +1,20 @@
-document.write("From the demo.js file");
+
+var iamFromDemo = "happy place";
+var version = "1.2.5";
+
+var nh = {};
+
+
+(function(){
+
+    function importantFunction(){
+
+
+    }
+
+    //many other function here
+
+
+    nh.myFunction = importantFunction;
+
+})();

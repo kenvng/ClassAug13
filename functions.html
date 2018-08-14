@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+
+
+        var topLevelVariable = "top";
+
+        //Function Statement Syntax
+        //function name([parameters])
+        // {
+
+        // }
+
+
+
+        function sayHi() {
+
+            function format(m){
+                var insideOfFormat = "test";
+
+                return "Hi there, " + m;
+            }
+            
+            var name = prompt("What is your name?")
+            var message = format(name);
+
+            
+            alert(message);
+        }
+
+        function add(n1, n2, n3, n4, n5) {
+
+            //can I build a function here?
+
+            var answer = n1 + n2;
+            if(n3)
+            {
+               answer += n3; 
+            } 
+
+            if(n4) answer += n4;
+            if(n5) answer += n5;
+
+
+            return answer;
+        }
+
+        //Add with unknown number of parameters
+        // function add(numbers) {
+        //     var total = 0;
+        //     for(var i = 0; i < arguments.length; i++){
+        //         total += arguments[i];
+        //     }
+        //     return total;
+        // }
+
+
+
+        //function expression syntax
+        var subtract = function (n1, n2) {
+            var answer = n1 - n2;
+            return answer
+        };
+
+        var answer = add(34, 76);
+
+        function ask(){
+            var answer = confirm("Are we there yet?");
+            if(answer){
+                alert("ok")
+            }else{
+                alert("I can't wait");
+            }
+        }
+
+        function saveTempCopy(){
+            //save the current form to localStorage
+
+        }
+
+        setInterval(saveTempCopy, 60000); //60 seconds
+
+        //Some fun now!
+        //setInterval(ask, 1500); //1500 milliseconds = 1.5 seconds
+
+
+    </script>
+</body>
+
+</html>
