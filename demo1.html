@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+
+    <!-- This is an HTML comment -->
+    <script>
+
+
+
+        // Why are ; optional?
+        // JavaScript was designed to be used by both
+        //     professional and novice developers alike
+        // so, some features were added to make it easier.
+
+
+        var discountTotalNeeded = 500.00;
+        var bigDiscountAmount = .2; //20 percent;
+        var littleDiscountAmount = .1; //20 percent;
+
+        var numberOfItems = prompt("How many different things are you purchasing?");
+
+        var total = 0;
+        for (var count = 1; count <= numberOfItems; count += 1) {
+
+            //1) What is the ..
+            var price = prompt(count + ") What is the product price?");
+            var quantity = prompt(count + ") How many are you purchasing?");
+            total += price * quantity;
+        }
+
+        document.write("Total before discount: " + total);
+
+        var cardMember = prompt("Are you a value card member? (y or n)");
+        cardMember = cardMember.toLowerCase();
+
+        if (total >= discountTotalNeeded || cardMember == "y") {
+            document.write("<p>Applying big Discount</p>");
+            total = total * (1 - bigDiscountAmount);
+        }
+        else {
+            document.write("<p>Applying little Discount</p>");
+            total = total * (1 - littleDiscountAmount);
+        }
+
+        document.write("<br/>");
+        document.write("final Price: " + total);
+
+
+        //Tax
+        // NC 7.5
+        // VT 6
+        // MI 6
+        // OH 6.75
+        // CO 2.9
+        // FL 6.7
+        // NY 8
+
+        var state = prompt("State Abv");
+        state = state.toUpperCase();
+
+        var salesTaxRate = 0;
+        switch (state) {
+            case "NC":
+                salesTaxRate = .075;
+                break;
+            case "VT":
+            case "MI":
+                salesTaxRate = .06;
+                break;
+            case "OH":
+                salesTaxRate = .0675;
+                break;
+            case "CO":
+                salesTaxRate = .029;
+                break;
+            case "FL":
+                salesTaxRate = .067;
+                break;
+            case "NY":
+                salesTaxRate = .08;
+                break;
+            default:
+                salesTaxRate = 0;
+                break;
+        }
+
+
+        var taxAmount = total *  salesTaxRate;
+        document.write("<p>Sales Tax of " + taxAmount + "</p>");
+
+        var finalTotal = total + taxAmount;
+        document.write("<p>Order total of  " + finalTotal + "</p>");
+
+        var itemName = "product" + (numberOfItems > 1 ? "s" : ""); //add as 's' if quatitny > 1
+
+        document.write("<p>We hope you enjoy your " + itemName + "</p>");
+
+    </script>
+
+</body>
+
+</html>

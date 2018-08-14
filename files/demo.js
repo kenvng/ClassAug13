@@ -1,0 +1,1 @@
+document.write("From the demo.js file");

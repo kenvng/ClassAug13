@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+    
+        var total = 0;
+
+        //do
+        //while
+
+        do {
+            var amount = prompt("How much for that item? (0 to exit)");
+            //make amount a number
+            amount = parseFloat(amount); //float is a number with a decimal
+
+
+
+            total += amount;
+        } while( amount != 0);
+
+
+
+
+        document.write("<p>Total: " + total + "</p>" );
+    
+    </script>
+</body>
+</html>
