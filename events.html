@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- #buttonColletion button-->
+    <!-- #buttonColletion-->
+
+    <div id="buttonCollection">
+        <p>This is cool</p>
+        <button data-command="edit">First</button>
+        <button data-command="save">Second</button>
+        <button data-command="delete">Third</button>
+        <button data-command="update" data-priya="true">Fourth</button>
+    </div>
+
+    <form>
+        <div>
+            <label for="command-field">command</label>
+            <input id="command-field" />
+        </div>
+
+        <div>
+            <label for="text-field">text</label>
+            <input id="text-field" />
+        </div>
+
+        <button id="createButton">Create</button>
+    </form>
+
+    <hr/>
+
+    <button id="save">Save</button>
+
+
+    <div id="content">
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+
+        $("#save").one("click", function () {
+
+            alert("Everyone Likes alerts.  (btw Saved)");
+
+        });
+
+
+
+        $("#createButton").click(function (evt) {
+            var command = $("#command-field").val();
+            var text = $("#text-field").val();
+
+            $("<button>")
+                .text(text)
+                .data("command", command)
+                .appendTo("#buttonCollection");
+
+            evt.preventDefault(); //stop the normal event from continuing
+            //evt.stopPropagation();
+            //return false; //Old style event cancel
+        });
+
+        //one event, for all the buttons
+
+        //$("#buttonCollection button").on("click", function(){
+        $("#buttonCollection").on("click", "button", function () {
+            var btn = $(this); //What was clicked
+            var text = btn.text(); // the text of the current button
+            var command = btn.data("command"); // the data command value
+            var message = "the command of '" + command + "' was executed but the " + text + " button " + new Date();
+            $("#content").text(message);
+        });
+
+        // $("button").first().
+        // $("button:nth-child(1)")
+        // $("button:eq(0)")
+        //$("#buttonCollection button:first").click(function(){});
+        // $("#buttonCollection button:first").on("click", function(){
+
+        //     $("#content").text("First Button was clicked!");
+
+        // });
+        //Four Events tied to the buttons
+        // $("#buttonCollection button").on("click", function(){
+
+        // });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #sample {
+            background-color: blue;
+        }
+
+        .awesome {
+            background-color: orange;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- nav > a -->
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- p[data-component] > -->
+    <div id="content">
+        <p data-component="product1">
+            This is a test
+        </p>
+        <div>
+            <p>
+                This is another test
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div id="sample" class="awesome">
+
+        Great Text! Orange and Blue forever!!
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>    
+
+           $("div").show().first().addClass("current");
+
+        var a = $("#sample");
+        a[0]
+
+        var b = document.getElementById("sample");
+
+    </script>
+</body>
+
+</html>

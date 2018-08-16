@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>    
+        var product = {"name":"Widget 2050", "price":"50", "color":"blue"};
+        
+        var data = JSON.stringify(product);
+
+        alert(data);
+
+        var productAgain = JSON.parse(data);
+        alert(productAgain.price);
+
+
+
+    </script>
+
+
+</body>
+
+</html>
