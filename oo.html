@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="content"></div>
+
+
+    <script>
+    
+    (function(){
+        "use strict";
+
+        var voltron = { version:"3.5", assembled: false };
+
+
+        var rightLegRobot = new Object();
+        rightLegRobot.color = "red";
+        
+        voltron.rightLeg = rightLegRobot;
+
+
+
+        function robotFactory(color, name){
+            var rbt = {};
+            rbt.name = name;
+            rbt.color = color;
+            return rbt;
+        }
+
+
+        var leftLeg = robotFactory("green", "barney");
+
+
+
+        // Simple Object creation - JSON
+        var movie1 = {title:"titanic", yearReleased:2003, summarize: function(){}};
+        var movie2 = {title:"aa", yearReleased:2003};
+        var movie3 = {title:"bb", yearReleased:2003};
+        var movie4 = {title:"cc", yearReleased:2003};
+        var movie5 = {title:"dd", yearReleased:2003};
+        var movie6 = {title:"ee", yearReleased:2003};
+
+        var titles = ["Star Wars", "Empire Strikes Back", "Return of the Jedi"];
+        var commonFunction = [function a(){}, function b(){}, function c(){}]
+
+       
+       //Constructor
+       //Create a function that starts with a capital letter
+       // the user will assume it must be called with 'new'
+
+
+        var someMovies = [
+            new Movie("Star Wars", 1977),
+            new Movie("Casablanca", 1956),
+            new Movie("Peter Pan", 1953)
+        ];
+        
+        for(var i = 0; i < someMovies.length; i++){
+            var movie = someMovies[i];
+            console.log(movie.summarize());
+        }
+
+
+        displayTable(someMovies);
+
+        function displayTable(arrayOfMovies){
+
+            var location = document.getElementById("content");
+            var tbl = document.createElement("table");
+            for(var row = 0; row < arrayOfMovies.length; row++){
+                var currentMovie = arrayOfMovies[row];
+                var tableRow = document.createElement("tr");
+
+                var titleData = document.createElement("td");
+                titleData.textContent = currentMovie.title;
+
+                var yearData = document.createElement("td");
+                yearData.textContent = currentMovie.yearReleased;
+                tableRow.appendChild(titleData);
+                tableRow.appendChild(yearData);
+
+                tbl.appendChild(tableRow);
+            }
+
+            location.innerHTML = "";
+            location.appendChild(tbl);
+
+        }
+
+        function Movie(title, yearReleased){
+            //var m = {}; this
+            this.title = title;
+            this.yearReleased = yearReleased;
+            //return this;
+        }
+
+        Movie.prototype.summarize =  function(){
+                return this.title + " was released in " + this.yearReleased;
+        };
+
+
+
+    })();
+    
+    </script>
+</body>
+</html>

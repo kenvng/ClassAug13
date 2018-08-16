@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .selected {
+            background-color: lightgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <ul id="top-list" style="display: none">
+        <li>
+            <a href="#">Foo</a>
+        </li>
+        <li class="current">
+            <a href="#">Foo</a>
+        </li>
+        <li>
+            <a href="#">Foo</a>
+        </li>
+        <li>
+            <a href="#">Foo</a>
+        </li>
+    </ul>
+    <div>
+        <p id="firstParagraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quo autem tempora asperiores enim et ipsa libero. Dolorum
+            magni labore in accusamus voluptatem eaque, esse autem asperiores fuga, veniam nam non molestiae corporis odit
+            unde laboriosam soluta eveniet laborum eum.
+        </p>
+        <p>
+            Quisquam quo autem tempora asperiores enim et ipsa libero. Dolorum magni labore in accusamus voluptatem eaque, esse autem
+            asperiores fuga, veniam nam non molestiae corporis odit unde laboriosam soluta eveniet laborum eum.
+        </p>
+        <p>
+            Voluptatem eaque, esse autem asperiores fuga, veniam nam non molestiae corporis odit unde laboriosam soluta eveniet laborum
+            eum.
+        </p>
+    </div>
+
+    <button>Show Top List</button>
+    <form>
+
+        <div>
+            <label for="name-text">Name</label>
+            <input id="name-text" />
+        </div>
+    </form>
+
+
+    <ul id="bottom-list">
+        <li>
+            <a href="#">Foo</a>
+        </li>
+        <li class="current">
+            <a href="#">Foo</a>
+        </li>
+        <li>
+            <a href="#">Foo</a>
+        </li>
+        <li>
+            <a href="#">Foo</a>
+        </li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+
+        //$("#firstParagraph, .current").addClass("selected");
+        //$("#top-list li:nth-child(2)").addClass("selected");
+        $("#bottom-list li:eq(2)").addClass("selected");
+        $("input").val("test value");
+        //$("#firstParagraph, .current").addClass("selected");
+        //$("#firstParagraph, .current").addClass("selected");
+
+
+        $("button").click(function(){
+
+            $("#top-list").slideDown("slow");
+
+        });
+        var current = $("a:eq(0)").attr("href");
+        //alert("Current going to " + current);
+        $("a:eq(0)")
+            .attr("href", "https://oscarotero.com/jquery/")
+            .text("jQuery Quick API Reference");
+
+
+        //add a li to the top menu
+        var item = $("<li>").addClass("current").text("Added with jquery");//.appendTo("#top-list");
+        $("#top-list").append(item);
+
+    </script>
+</body>
+
+</html>

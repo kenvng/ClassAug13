@@ -89,6 +89,19 @@
             //button.onclick = someOtherFunction;
 
 
+            //option 1
+            var b = document.getElementById("button");
+            function foo(){
+                //do work here
+
+            }
+            b.addEventListener("click", foo);
+
+            //option 2
+            document.getElementById("button").addEventListener("click", function(){
+                //do work here
+            });
+
         })();
 
 

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .content {
+            max-width: 800px;
+            margin: 1em auto;
+            font-size: 1.5em;
+        }
+
+        .keyword.highlight {
+            font-size: 1.1em;
+            color: teal;
+            text-transform: uppercase;
+        }
+    </style>
+    <!-- <script>
+        //     Straight up DOM
+        // document.getElementById("keywords-button").addEventListener("click", function(){
+            var keywordElements = document.getElementsByClassName("keyword");
+            for (var i = 0; i < keywordElements.length; i++) {
+                var element = keywordElements[i];
+                element.classList.add("highlight");
+            }
+            //});
+            
+        </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+        (function () {
+
+            "use strict";
+
+            // Straight up DOM
+            // document.getElementById("keywords-button").addEventListener("click", function(){
+            //     var keywordElements = document.getElementsByClassName("keyword");
+            //     for(var i = 0; i < keywordElements.length; i++){
+            //         var element = keywordElements[i];
+            //         element.classList.add("highlight");
+            //     }
+            // });
+
+            //$("#keywords-button").click(function () {
+            $(".keyword").toggleClass("highlight");
+            //});
+
+
+            // 1) Make Dom Manipulation easier
+            // 2) Browsers are hatefull places
+            // 3) Network communication easier (AJAX)
+            // 4) Other libraries took a dependency on it
+
+            //Waiting for document ready - version 1
+            $(document).ready(function () {
+                $(".keyword").toggleClass("highlight");
+            });
+
+            //Waiting for document ready - version 2
+            $(function () {
+                $(".keyword").toggleClass("highlight");
+            });
+
+
+        })();
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <ul>
+        <li>
+            <button id="keywords-button">Highlight Keywords</button>
+        </li>
+        <li>
+            <button id="x">x</button>
+        </li>
+    </ul>
+
+    <div class="content">
+        <p>
+            Lorem ipsum dolor, sit amet
+            <span class="keyword">consectetur</span> adipisicing elit. Quae ea voluptatibus aut corporis quam. Soluta saepe natus possimus dolor
+            atque quod praesentium, ipsum sed eos, molestias recusandae magnam fuga aspernatur vero quia ab vitae numquam
+            sint ipsam. Officiis doloremque incidunt inventore aliquid dolore, nesciunt doloribus provident sint modi optio!
+            Minima soluta veritatis quibusdam ut. Dicta exercitationem sed molestias ipsam, porro minus. Quibusdam reprehenderit
+            ipsa ducimus esse aspernatur a? Omnis ea tempore neque exercitationem quisquam qui eos odit cumque. Velit, impedit
+            ipsa. Iure deserunt voluptates exercitationem repellat aut adipisci, illo consequuntur at odit perspiciatis velit
+            veniam, nulla tenetur quod eius animi?
+        </p>
+        <p>
+            Incidunt voluptas suscipit
+            <span class="keyword">distinctio nemo</span> voluptatem repellendus itaque, iure facere iste dolorem, iusto explicabo dolore ducimus
+            officiis odit magni repellat
+            <span class="keyword">accusamus</span> impedit ipsam laborum voluptatum vitae minima perferendis. Facilis ipsa necessitatibus repellat
+            voluptates quis odio ducimus recusandae laudantium minima vitae quae amet perferendis laboriosam, voluptate natus
+            labore sint facere voluptatem ea temporibus blanditiis. Quidem facilis voluptas sunt exercitationem adipisci
+            non omnis, vel quam maxime consequatur pariatur qui impedit libero expedita error aspernatur ad nesciunt soluta
+            odit, sapiente cum optio ut iste iusto. Quia rem quibusdam eum. Reprehenderit commodi iure, fugit totam voluptatem
+            minima.
+        </p>
+        <p>
+            Officia iste impedit aut alias delectus molestiae corporis, explicabo labore non ex incidunt ea at nostrum eum id asperiores
+            rem
+            <span class="keyword">possimus officiis</span> deleniti veniam! Ab, culpa quasi sunt repellendus nihil sit dolores ipsum expedita numquam
+            laboriosam unde nesciunt harum voluptates? Ea cum earum, omnis provident veniam qui minima cumque illo perferendis
+            libero tempore eius eaque officia accusamus.
+            <span class="keyword">Architecto molestiae</span>, laborum tempora delectus iste dolores assumenda aspernatur consectetur natus cupiditate
+            molestias porro fuga incidunt odit impedit distinctio. Ratione, enim ex non aliquid doloremque corrupti at explicabo
+            illo omnis voluptates officiis expedita nulla?
+        </p>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
